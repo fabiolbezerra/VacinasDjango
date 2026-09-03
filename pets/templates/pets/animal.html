@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Animal</title>
+</head>
+<body>
+    <h1>{{ animal }}</h1>
+
+    <ul>
+        <li>Dono: {{ animal.dono }}</li>
+        <li>Telefone do dono: {{ animal.telefone_dono }}</li>
+        <li>Nascimento do animal: {{ animal.nascimento }}</li>
+    </ul>
+
+    <h2>Vacinas</h2>
+    {% if animal.vacina_set.all %}
+        <ul>
+            {% for vacina in animal.vacina_set.all %}
+            <li>{{ vacina }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        Nenhuma vacina administrada
+    {% endif %}
+</body>
+</html>

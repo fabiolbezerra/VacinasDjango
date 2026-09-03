@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Raças</title>
+</head>
+<body>
+    <h1>Lista de Raças</h1>
+    {% if raca_list  %}
+        <ul>
+            {% for raca in raca_list %}
+                <li>
+                    <a href="/animais/raca/{{ raca.nome }}">{{ raca }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else  %}
+        Nenhuma raça cadastrada
+    {% endif %}
+</body>
+</html>

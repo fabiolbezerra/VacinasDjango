@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Animais</title>
+</head>
+<body>
+    <h1>Lista de Animais</h1>
+    {% if animal_list %}
+        <ul>
+            {% for animal in animal_list %}
+                <li>
+                    <a href="{% url 'pets:animal_detail' animal.id %}">{{ animal }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        Nenhum animal cadastrado com os critérios indicados
+    {% endif %}
+</body>
+</html>
