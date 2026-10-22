@@ -19,12 +19,13 @@ class Animal(models.Model):
     raca = models.ForeignKey(Raca, on_delete=models.CASCADE)
 
     def nascimento_valido(self):
+        hoje = datetime.date.today()
         #Não pode ser no futuro
-        amanha = timezone.now() + datetime.timedelta(days=1)
+        amanha = hoje + datetime.timedelta(days=1)
         #Não pode ser muito no passado
-        vinte_anos_atras = timezone.now() - datetime.timedelta(days=20*365)
-
-
+        vinte_anos_atras = hoje - datetime.timedelta(days=20 * 365)
+        #data de nascimento válido é entre vinte anos atrás e amanhã
+        return vinte_anos_atras < self.nascimento < amanha
 
     def __str__(self):
         resposta = f'{self.nome} ({self.raca})'

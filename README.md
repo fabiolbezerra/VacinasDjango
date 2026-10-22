@@ -1,2 +1,5 @@
 # VacinasDjango
-Projeto exemplo de aplicação Python Web de gestão das vacinas de um animal
+
+Projeto exemplo de aplicação web, escrita em Python, de gestão das vacinas de um animal.
+
+O framework utilizado é o Django.
